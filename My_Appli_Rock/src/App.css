@@ -1,0 +1,175 @@
+/* Styles généraux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Styles de la page d'accueil */
+.home-container {
+  min-height: 100vh;
+  background-image: url('/background-dots.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-top: 2rem;
+}
+
+/* Header et Navigation */
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  margin-bottom: 4rem;
+}
+
+.logo-container {
+  width: 150px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Section principale */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-bottom: 4rem;
+}
+
+.text-section {
+  width: 40%;
+  padding-top: 2rem;
+}
+
+.text-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 500px;
+}
+
+.image-section {
+  width: 50%;
+  text-align: right;
+}
+
+.artist-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Section Album */
+.album-section {
+  background-color: #000000;
+  padding: 4rem 2rem;
+}
+
+.album-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.album-text {
+  width: 50%;
+}
+
+.album-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.album-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 500px;
+}
+
+.album-cover {
+  width: 40%;
+}
+
+.album-image {
+  width: 100%;
+  height: auto;
+}
+
+.listen-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.listen-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Styles responsive */
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .main-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .text-section,
+  .image-section {
+    width: 100%;
+    text-align: left;
+  }
+
+  .album-content {
+    flex-direction: column;
+  }
+
+  .album-text,
+  .album-cover {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .album-title {
+    font-size: 2.5rem;
+  }
+}
