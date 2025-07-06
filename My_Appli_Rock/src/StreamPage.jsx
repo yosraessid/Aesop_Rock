@@ -1,33 +1,167 @@
 import React from "react";
+import './App.css';
 
 function StreamPage() {
   return (
-    <div className="stream-container">
-      <header className="stream-header">
-        <h1 className="stream-title">ÉCOUTER</h1>
-      </header>
-      <div className="streaming-buttons">
-        <a href="#" className="stream-button">
-          <img src="/deezer-logo.png" alt="Deezer" />
-          Deezer
-        </a>
-        <a href="#" className="stream-button">
-          <img src="/spotify-logo.png" alt="Spotify" />
-          Spotify
-        </a>
-        <a href="#" className="stream-button">
-          <img src="/apple-music-logo.png" alt="Apple Music" />
-          Apple Music
-        </a>
-        <a href="#" className="stream-button">
-          <img src="/youtube-logo.png" alt="YouTube" />
-          YouTube
-        </a>
-        <a href="#" className="stream-button">
-          <img src="/tidal-logo.png" alt="Tidal" />
-          Tidal
-        </a>
+    <div style={{
+      minHeight: "100vh",
+      width: "100vw",
+      fontFamily: "Roboto Mono",
+      backgroundImage: "url('/assets/images/fontst.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center -200px",
+      backgroundRepeat: "no-repeat",
+      position: "relative",
+      display: "flex",
+      flexDirection: "column"
+    }}>
+      {/* Motif en overlay, transparent */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        backgroundImage: "url('/assets/images/fondstream.png')",
+        backgroundRepeat: "repeat",
+        backgroundSize: "auto",
+        opacity: 0.18, // ajuste la transparence ici !
+        pointerEvents: "none",
+        zIndex: 1
+      }} />
+      <div style={{ flex: 1 }}>
+        <header style={{
+          width: '100%',
+          background: 'transparent',
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          padding: '0.5rem 3.5rem 1.5rem 3.5rem',
+          position: 'relative',
+          zIndex: 2,
+          fontFamily: 'Roboto Mono'
+        }}>
+          <img src="/assets/images/aesop-rock-logo.png" alt="Aesop Rock Logo" style={{ height: 180, width: 'auto', display: 'block' }} />
+          <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', height: 180, marginRight: '5rem', marginTop: '2.5rem' }}>
+            <a href="/" style={{ color: '#fff', fontWeight: 700, fontSize: '1.25rem', letterSpacing: '1px', textDecoration: 'none' }}>ACCUEIL</a>
+            <a href="/actualites" style={{ color: '#fff', fontWeight: 700, fontSize: '1.25rem', letterSpacing: '1px', textDecoration: 'none' }}>ACTUALITÉS</a>
+          </div>
+        </header>
+        {/* Bloc titre + description */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            minHeight: "60vh",
+            margin: 0,
+            maxWidth: 900,
+            width: "100%",
+            marginBottom: "-2rem",
+            paddingLeft: "5rem",
+            marginTop: "1.5rem"
+          }}
+        >
+          <h1 style={{
+            color: "#A2A82E",
+            fontSize: "2.8rem",
+            fontWeight: 900,
+            margin: 0,
+            marginTop: "0",
+            marginLeft: "8.5rem",
+            letterSpacing: 2,
+            textTransform: "uppercase",
+            fontFamily: "Transducer, 'Arial Black', 'Roboto Mono', Arial, sans-serif",
+            alignSelf: "flex-start"
+          }}>
+            ÉCOUTER
+          </h1>
+          <p
+            className="stream-description"
+            style={{
+              color: "#fff",
+              fontSize: "2rem",
+              margin: "2.5rem 0 0 0",
+              lineHeight: 1.4,
+              fontWeight: 400,
+              fontFamily: "Roboto Mono",
+              fontStyle: "normal",
+              textAlign: "center",
+              alignSelf: "center"
+            }}
+          >
+            Plongez dans l'univers d'Aesop en un clic
+          </p>
+        </div>
+        {/* Logos plateformes */}
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "40vh", marginBottom: "8rem", marginTop: "-5rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", minWidth: 340, maxWidth: 400, width: "100%" }}>
+            {/* Deezer */}
+            <div style={{ background: "#fff", opacity: 1, position: "relative", zIndex: 2, borderRadius: 0, boxShadow: "none", border: "none", outline: "none", filter: "none", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 130, padding: "0 2.2rem" }}>
+              <a href="https://www.deezer.com/fr/artist/1260" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/images/Deezer.png" alt="Deezer" style={{ maxWidth: '70%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', margin: '0 auto' }} />
+              </a>
+            </div>
+            {/* Spotify */}
+            <div style={{ background: "#fff", opacity: 1, position: "relative", zIndex: 2, borderRadius: 0, boxShadow: "none", border: "none", outline: "none", filter: "none", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 130, padding: "0 2.2rem" }}>
+              <a href="https://open.spotify.com/intl-fr/artist/2fSaE6BXtQy0x7R7v9IOmZ" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/images/sportify.png" alt="Spotify" style={{ maxWidth: '70%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', margin: '0 auto' }} />
+              </a>
+            </div>
+            {/* Apple Music */}
+            <div style={{ background: "#fff", opacity: 1, position: "relative", zIndex: 2, borderRadius: 0, boxShadow: "none", border: "none", outline: "none", filter: "none", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 130, padding: "0 2.2rem" }}>
+              <a href="https://music.apple.com/fr/artist/aesop-rock/3858833" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/images/music.png" alt="Apple Music" style={{ maxWidth: '70%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', margin: '0 auto' }} />
+              </a>
+            </div>
+            {/* YouTube */}
+            <div style={{ background: "#fff", opacity: 1, position: "relative", zIndex: 2, borderRadius: 0, boxShadow: "none", border: "none", outline: "none", filter: "none", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 130, padding: "0 2.2rem" }}>
+              <a href="https://www.youtube.com/results?search_query=l'artist+aesop+rock" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/images/youtube.png" alt="YouTube" style={{ maxWidth: '70%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', margin: '0 auto' }} />
+              </a>
+            </div>
+            {/* Tidal */}
+            <div style={{ background: "#fff", opacity: 1, position: "relative", zIndex: 2, borderRadius: 0, boxShadow: "none", border: "none", outline: "none", filter: "none", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 130, padding: "0 2.2rem" }}>
+              <a href="https://tidal.com/browse/artist/3568872" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/images/tidal.png" alt="Tidal" style={{ maxWidth: '70%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', margin: '0 auto' }} />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+      {/* Footer */}
+      <footer className="stream-footer" style={{ background: "#111", color: "#fff", padding: "4.5rem 0 3rem 0", marginTop: "auto", position: "relative", zIndex: 2, fontFamily: 'Roboto Mono' }}>
+        <div style={{ borderTop: "2px solid #888", width: "92%", margin: "-2.2rem auto 6rem auto" }}></div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", maxWidth: 1100, margin: "0 auto", flexWrap: "wrap", gap: 24 }}>
+          <div style={{ fontSize: "0.95rem", opacity: 0.8, display: "flex", flexDirection: "column", gap: 4, marginLeft: "-10rem" }}>
+            <span>Aide et support</span>
+            <span>Politique de confidentialité</span>
+            <span>Conditions générales</span>
+          </div>
+          <div style={{ fontSize: "0.95rem", opacity: 0.8, display: "flex", flexDirection: "column", gap: 4 }}>
+            <span>Cookies</span>
+            <span>Ne vendez pas mes informations personnelles</span>
+            <span>Inscrivez-vous à la newsletter</span>
+          </div>
+          <div style={{ display: "flex", gap: 6, alignItems: "center", marginBottom: "1.2rem" }}>
+            {/* Icônes réseaux sociaux - cercle blanc, pictogramme noir */}
+            <a href="https://x.com/aesoprockwins?lang=ta" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 44, height: 44 }} title="X" target="_blank" rel="noopener noreferrer">
+              <svg width="22" height="22" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </a>
+            <a href="https://www.instagram.com/aesoprockwins/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 44, height: 44 }} title="Instagram">
+              <svg width="22" height="22" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCzVC0z-KheQEV_2H2zg6V9w" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 44, height: 44 }} title="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#fff"/>
+                <rect x="7" y="9" width="18" height="14" rx="5" fill="#111"/>
+                <polygon points="16,13 22,16 16,19" fill="#fff"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/AesopRockWins/" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 44, height: 44 }} title="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="22" height="22" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><path d="M18 2h-3a4 4 0 0 0-4 4v3H7v4h4v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
