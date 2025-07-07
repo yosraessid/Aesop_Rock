@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate, useLocation } from 'react-router-dom'; // utilisé pour le bouton retour et la redirection après ajout
 import { collection, addDoc, doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "./firebase";
+import './App.css';
 
 function AdminForm() {
   // State pour le formulaire (ville, lieu, date, heure, statut, tournee, pays)

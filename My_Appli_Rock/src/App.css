@@ -1,3 +1,6 @@
+body {
+  font-family: 'Roboto Mono', monospace;
+}
 /* Responsive pour mobile */
 @media (max-width: 600px) {
   body {
@@ -14,6 +17,10 @@
   }
   form {
     padding: 1rem !important;
+  }
+  .actualites-footer-social {
+    justify-content: center !important;
+    align-self: center !important;
   }
 }
 
@@ -80,7 +87,7 @@
   }
 }
 
-/* Responsive StreamPage PRO */
+/* Responsive StreamPage  */
 
 /* Mobile très petit (≤ 200px) */
 @media (max-width: 200px) {
@@ -247,7 +254,154 @@
   }
 }
 
-/* responsive pour la page  stream */
+/* Responsive pour la page Actualités */
+@media (max-width: 900px) {
+  .actualites-main {
+    flex-direction: column !important;
+    padding-left: 1.2rem !important;
+    padding-right: 1.2rem !important;
+    gap: 1.5rem !important;
+  }
+  .actualites-col {
+    width: 100% !important;
+    margin-top: 0 !important;
+    min-height: auto !important;
+  }
+  .actualites-img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .actualites-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1rem 1.2rem 1.5rem 1.2rem !important;
+  }
+  .actualites-title {
+    font-size: 2rem !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+  }
+  .actualites-footer-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.2rem !important;
+  }
+  .actualites-footer-social {
+    order: 2 !important;
+    align-self: flex-start !important;
+    margin-bottom: 0 !important;
+    margin-top: 1.2rem !important;
+  }
+  .actualites-footer-bloc {
+    order: 1 !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* Responsive extrême pour mobile très petit (200px à 320px) */
+@media (max-width: 320px) {
+  .actualites-main {
+    padding-left: 0.2rem !important;
+    padding-right: 0.2rem !important;
+    gap: 0.5rem !important;
+  }
+  .actualites-title {
+    font-size: 1.2rem !important;
+    padding-left: 0 !important;
+  }
+  .actualites-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  .actualites-footer-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.7rem !important;
+  }
+  .actualites-footer-social {
+    order: 2 !important;
+    align-self: flex-start !important;
+    margin-bottom: 0 !important;
+    margin-top: 0.7rem !important;
+  }
+  .actualites-footer-bloc {
+    order: 1 !important;
+  }
+}
+
+/* Effet sur les liens et icônes du footer au survol ou clic */
+footer a:hover,
+footer a:active,
+footer a:focus {
+  background: #443978 !important;
+  outline: none;
+}
+footer a:hover svg,
+footer a:active svg,
+footer a:focus svg {
+  stroke: #fff !important;
+  fill: #fff !important;
+}
+footer a:hover span,
+footer a:active span,
+footer a:focus span {
+  color: #443978 !important;
+}
+
+footer span:hover,
+footer span:active,
+footer span:focus {
+  color: #443978 !important;
+  cursor: pointer;
+}
+
+/* Animation fluide sur tous les liens et icônes */
+a, .stream-footer span, .stream-header a, img, .stream-description {
+  transition: color 0.25s, background 0.25s, box-shadow 0.25s, transform 0.25s, filter 0.25s;
+}
+
+/* Animation d'élévation sur les icônes réseaux sociaux du footer */
+footer a:hover,
+footer a:active,
+footer a:focus {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 8px 24px rgba(68,57,120,0.18);
+}
+
+/* Animation sur les liens du header */
+.stream-header a:hover,
+.stream-header a:active,
+.stream-header a:focus {
+  color: #443978 !important;
+  transform: scale(1.08);
+}
+
+/* Animation sur les images (zoom léger au survol) */
+main img:hover,
+main img:active,
+main img:focus {
+  transform: scale(1.04);
+  filter: brightness(1.08) contrast(1.08);
+  box-shadow: 0 8px 32px rgba(68,57,120,0.10);
+}
+
+/* Animation sur les logos de plateformes de streaming */
+.stream-description + div > div:hover,
+.stream-description + div > div:active,
+.stream-description + div > div:focus {
+  transform: scale(1.04);
+  box-shadow: 0 8px 32px rgba(68,57,120,0.10);
+}
+
+
+
 
 
 

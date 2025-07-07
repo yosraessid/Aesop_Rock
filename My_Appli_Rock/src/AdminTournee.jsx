@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import { collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 import { db } from "./firebase";
+import './App.css';
 
 function AdminTournee() {
   const navigate = useNavigate();

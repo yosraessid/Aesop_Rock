@@ -38,10 +38,11 @@ function StreamPage() {
           zIndex: 2,
           fontFamily: 'Roboto Mono'
         }}>
-          <img src="/assets/images/aesop-rock-logo.png" alt="Aesop Rock Logo" style={{ height: 180, width: 'auto', display: 'block' }} />
+          <img src="/assets/images/aesop-rock-logo.png" alt="Aesop Rock Logo" style={{ height: 230, width: 'auto', display: 'block' }} />
           <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', height: 180, marginRight: '5rem', marginTop: '2.5rem' }}>
-            <a href="/" style={{ color: '#fff', fontWeight: 700, fontSize: '1.25rem', letterSpacing: '1px', textDecoration: 'none' }}>ACCUEIL</a>
-            <a href="/actualites" style={{ color: '#fff', fontWeight: 700, fontSize: '1.25rem', letterSpacing: '1px', textDecoration: 'none' }}>ACTUALITÉS</a>
+            <a href="/" style={{ color: '#fff', fontWeight: 700, fontSize: '1.5rem', letterSpacing: '1px', textDecoration: 'none' }}>ACCUEIL</a>
+            <a href="/stream" style={{ color: '#fff', fontWeight: 700, fontSize: '1.5rem', letterSpacing: '1px', textDecoration: 'none' }}>STREAM</a>
+            <a href="/actualites" style={{ color: '#fff', fontWeight: 700, fontSize: '1.5rem', letterSpacing: '1px', textDecoration: 'none' }}>ACTUALITÉS</a>
           </div>
         </header>
         {/* Bloc titre + description */}
@@ -62,7 +63,7 @@ function StreamPage() {
         >
           <h1 style={{
             color: "#A2A82E",
-            fontSize: "2.8rem",
+            fontSize: "4rem",
             fontWeight: 900,
             margin: 0,
             marginTop: "0",
@@ -78,7 +79,7 @@ function StreamPage() {
             className="stream-description"
             style={{
               color: "#fff",
-              fontSize: "2rem",
+              fontSize: "2.5rem",
               margin: "2.5rem 0 0 0",
               lineHeight: 1.4,
               fontWeight: 400,
@@ -128,15 +129,15 @@ function StreamPage() {
         </div>
       </div>
       {/* Footer */}
-      <footer className="stream-footer" style={{ background: "#111", color: "#fff", padding: "4.5rem 0 3rem 0", marginTop: "auto", position: "relative", zIndex: 2, fontFamily: 'Roboto Mono' }}>
-        <div style={{ borderTop: "2px solid #888", width: "92%", margin: "-2.2rem auto 6rem auto" }}></div>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", maxWidth: 1100, margin: "0 auto", flexWrap: "wrap", gap: 24 }}>
-          <div style={{ fontSize: "0.95rem", opacity: 0.8, display: "flex", flexDirection: "column", gap: 4, marginLeft: "-10rem" }}>
+      <footer className="footer-global" style={{ background: "#111", color: "#fff", padding: "0 0 3rem 0", marginTop: "auto", position: "relative", zIndex: 2, fontFamily: 'Roboto Mono' }}>
+        <div style={{ borderTop: "2px solid #888", width: "100%", margin: "0 auto 2.5rem auto" }}></div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", maxWidth: 1100, margin: "0 auto", flexWrap: "wrap", gap: 24 }}>
+          <div style={{ fontSize: "1rem", opacity: 0.8, display: "flex", flexDirection: "column", gap: 8, marginLeft: 0, alignItems: 'flex-start', textAlign: 'left', paddingRight: 0 }}>
             <span>Aide et support</span>
             <span>Politique de confidentialité</span>
             <span>Conditions générales</span>
           </div>
-          <div style={{ fontSize: "0.95rem", opacity: 0.8, display: "flex", flexDirection: "column", gap: 4 }}>
+          <div style={{ fontSize: "1rem", opacity: 0.8, display: "flex", flexDirection: "column", gap: 8, alignItems: 'flex-start', textAlign: 'left', paddingRight: 0 }}>
             <span>Cookies</span>
             <span>Ne vendez pas mes informations personnelles</span>
             <span>Inscrivez-vous à la newsletter</span>
