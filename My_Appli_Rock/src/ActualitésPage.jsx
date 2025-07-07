@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 
 import './App.css';
 
 function ActualitésPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div style={{
       minHeight: "100vh",
@@ -16,19 +18,16 @@ function ActualitésPage() {
       position: "relative"
     }}>
       {/* Header identique à StreamPage */}
-      <header style={{
-        width: '100%',
-        background: 'transparent',
-        display: 'flex',
-        alignItems: 'flex-start',
-        justifyContent: 'space-between',
-        padding: '0.5rem 3.5rem 1.5rem 3.5rem',
-        position: 'relative',
-        zIndex: 2,
-        fontFamily: 'Roboto Mono'
-      }}>
-        <img src="/assets/images/aesop-rock-logo.png" alt="Aesop Rock Logo" style={{ height: 230, width: 'auto', display: 'block' }} />
-        <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', height: 180, marginRight: '5rem', marginTop: '2.5rem' }}>
+      <header className="stream-header">
+        <img src="/assets/images/aesop-rock-logo.png" alt="Aesop Rock Logo" />
+        {/* Icône burger visible sur mobile */}
+        <div className="burger-menu" onClick={() => setMenuOpen(!menuOpen)}>
+          <div className="burger-bar"></div>
+          <div className="burger-bar"></div>
+          <div className="burger-bar"></div>
+        </div>
+        {/* Liens visibles sur desktop/tablette OU si menu burger ouvert */}
+        <div className={menuOpen ? "stream-header-links open" : "stream-header-links"}>
           <a href="/" style={{ color: '#fff', fontWeight: 700, fontSize: '1.5rem', letterSpacing: '1px', textDecoration: 'none' }}>ACCUEIL</a>
           <a href="/stream" style={{ color: '#fff', fontWeight: 700, fontSize: '1.5rem', letterSpacing: '1px', textDecoration: 'none' }}>STREAM</a>
           <a href="/actualites" style={{ color: '#fff', fontWeight: 700, fontSize: '1.5rem', letterSpacing: '1px', textDecoration: 'none' }}>ACTUALITÉS</a>

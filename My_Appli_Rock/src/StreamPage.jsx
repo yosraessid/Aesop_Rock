@@ -1,126 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 import './App.css';
 
 function StreamPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div style={{
-      minHeight: "100vh",
-      width: "100vw",
-      fontFamily: "Roboto Mono",
-      backgroundImage: "url('/assets/images/fontst.jpg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center -200px",
-      backgroundRepeat: "no-repeat",
-      position: "relative",
-      display: "flex",
-      flexDirection: "column"
-    }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        width: "100vw",
+        fontFamily: "Roboto Mono",
+        backgroundImage: "url('/assets/images/fontst.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center -200px",
+        backgroundRepeat: "no-repeat",
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        overflowX: "hidden"
+      }}
+    >
       {/* Motif en overlay, transparent */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        backgroundImage: "url('/assets/images/fondstream.png')",
-        backgroundRepeat: "repeat",
-        backgroundSize: "auto",
-        opacity: 0.18, // ajuste la transparence ici !
-        pointerEvents: "none",
-        zIndex: 1
-      }} />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/assets/images/fondstream.png')",
+          backgroundRepeat: "repeat",
+          backgroundSize: "auto",
+          opacity: 0.18,
+          pointerEvents: "none",
+          zIndex: 1
+        }}
+      />
       <div style={{ flex: 1 }}>
-        <header style={{
-          width: '100%',
-          background: 'transparent',
-          display: 'flex',
-          alignItems: 'flex-start',
-          justifyContent: 'space-between',
-          padding: '0.5rem 3.5rem 1.5rem 3.5rem',
-          position: 'relative',
-          zIndex: 2,
-          fontFamily: 'Roboto Mono'
-        }}>
-          <img src="/assets/images/aesop-rock-logo.png" alt="Aesop Rock Logo" style={{ height: 230, width: 'auto', display: 'block' }} />
-          <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', height: 180, marginRight: '5rem', marginTop: '2.5rem' }}>
+        <div className="stream-header">
+          <img src="/assets/images/aesop-rock-logo.png" alt="Aesop Rock Logo" />
+          {/* Icône burger visible sur mobile */}
+          <div className="burger-menu" onClick={() => setMenuOpen(!menuOpen)}>
+            <div className="burger-bar"></div>
+            <div className="burger-bar"></div>
+            <div className="burger-bar"></div>
+          </div>
+          {/* Liens visibles sur desktop/tablette OU si menu burger ouvert */}
+          <div className={menuOpen ? "stream-header-links open" : "stream-header-links"}>
             <a href="/" style={{ color: '#fff', fontWeight: 700, fontSize: '1.5rem', letterSpacing: '1px', textDecoration: 'none' }}>ACCUEIL</a>
             <a href="/stream" style={{ color: '#fff', fontWeight: 700, fontSize: '1.5rem', letterSpacing: '1px', textDecoration: 'none' }}>STREAM</a>
             <a href="/actualites" style={{ color: '#fff', fontWeight: 700, fontSize: '1.5rem', letterSpacing: '1px', textDecoration: 'none' }}>ACTUALITÉS</a>
           </div>
-        </header>
+        </div>
         {/* Bloc titre + description */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "center",
-            minHeight: "60vh",
-            margin: 0,
-            maxWidth: 900,
-            width: "100%",
-            marginBottom: "-2rem",
-            paddingLeft: "5rem",
-            marginTop: "1.5rem"
-          }}
-        >
-          <h1 style={{
-            color: "#A2A82E",
-            fontSize: "4rem",
-            fontWeight: 900,
-            margin: 0,
-            marginTop: "0",
-            marginLeft: "8.5rem",
-            letterSpacing: 2,
-            textTransform: "uppercase",
-            fontFamily: "Transducer, 'Arial Black', 'Roboto Mono', Arial, sans-serif",
-            alignSelf: "flex-start"
-          }}>
-            ÉCOUTER
-          </h1>
-          <p
-            className="stream-description"
-            style={{
-              color: "#fff",
-              fontSize: "2.5rem",
-              margin: "2.5rem 0 0 0",
-              lineHeight: 1.4,
-              fontWeight: 400,
-              fontFamily: "Roboto Mono",
-              fontStyle: "normal",
-              textAlign: "center",
-              alignSelf: "center"
-            }}
-          >
-            Plongez dans l'univers d'Aesop en un clic
-          </p>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", minHeight: "60vh", margin: 0, width: "100%", marginBottom: 0, padding: 0, marginTop: 0 }}>
+          <h1 className="stream-title">ÉCOUTER</h1>
+          <p className="stream-description">Plongez dans l'univers d'Aesop en un clic</p>
         </div>
         {/* Logos plateformes */}
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "40vh", marginBottom: "8rem", marginTop: "-5rem" }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", minWidth: 340, maxWidth: 400, width: "100%" }}>
+        <div className="stream-logos">
+          <div className="stream-logos-list">
             {/* Deezer */}
-            <div style={{ background: "#fff", opacity: 1, position: "relative", zIndex: 2, borderRadius: 0, boxShadow: "none", border: "none", outline: "none", filter: "none", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 130, padding: "0 2.2rem" }}>
+            <div className="stream-logo-item">
               <a href="https://www.deezer.com/fr/artist/1260" target="_blank" rel="noopener noreferrer">
                 <img src="/assets/images/Deezer.png" alt="Deezer" style={{ maxWidth: '70%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', margin: '0 auto' }} />
               </a>
             </div>
             {/* Spotify */}
-            <div style={{ background: "#fff", opacity: 1, position: "relative", zIndex: 2, borderRadius: 0, boxShadow: "none", border: "none", outline: "none", filter: "none", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 130, padding: "0 2.2rem" }}>
+            <div className="stream-logo-item">
               <a href="https://open.spotify.com/intl-fr/artist/2fSaE6BXtQy0x7R7v9IOmZ" target="_blank" rel="noopener noreferrer">
                 <img src="/assets/images/sportify.png" alt="Spotify" style={{ maxWidth: '70%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', margin: '0 auto' }} />
               </a>
             </div>
             {/* Apple Music */}
-            <div style={{ background: "#fff", opacity: 1, position: "relative", zIndex: 2, borderRadius: 0, boxShadow: "none", border: "none", outline: "none", filter: "none", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 130, padding: "0 2.2rem" }}>
+            <div className="stream-logo-item">
               <a href="https://music.apple.com/fr/artist/aesop-rock/3858833" target="_blank" rel="noopener noreferrer">
                 <img src="/assets/images/music.png" alt="Apple Music" style={{ maxWidth: '70%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', margin: '0 auto' }} />
               </a>
             </div>
             {/* YouTube */}
-            <div style={{ background: "#fff", opacity: 1, position: "relative", zIndex: 2, borderRadius: 0, boxShadow: "none", border: "none", outline: "none", filter: "none", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 130, padding: "0 2.2rem" }}>
+            <div className="stream-logo-item">
               <a href="https://www.youtube.com/results?search_query=l'artist+aesop+rock" target="_blank" rel="noopener noreferrer">
                 <img src="/assets/images/youtube.png" alt="YouTube" style={{ maxWidth: '70%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', margin: '0 auto' }} />
               </a>
             </div>
             {/* Tidal */}
-            <div style={{ background: "#fff", opacity: 1, position: "relative", zIndex: 2, borderRadius: 0, boxShadow: "none", border: "none", outline: "none", filter: "none", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 130, padding: "0 2.2rem" }}>
+            <div className="stream-logo-item">
               <a href="https://tidal.com/browse/artist/3568872" target="_blank" rel="noopener noreferrer">
                 <img src="/assets/images/tidal.png" alt="Tidal" style={{ maxWidth: '70%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', margin: '0 auto' }} />
               </a>
