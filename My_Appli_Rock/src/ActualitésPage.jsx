@@ -30,6 +30,7 @@ function ActualitésPage() {
         <img src="/assets/images/aesop-rock-logo.png" alt="Aesop Rock Logo" style={{ height: 180, width: 'auto', display: 'block' }} />
         <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', height: 180, marginRight: '5rem', marginTop: '2.5rem' }}>
           <a href="/" style={{ color: '#fff', fontWeight: 700, fontSize: '1.25rem', letterSpacing: '1px', textDecoration: 'none' }}>ACCUEIL</a>
+          <a href="/stream" style={{ color: '#fff', fontWeight: 700, fontSize: '1.25rem', letterSpacing: '1px', textDecoration: 'none' }}>STREAM</a>
           <a href="/actualites" style={{ color: '#fff', fontWeight: 700, fontSize: '1.25rem', letterSpacing: '1px', textDecoration: 'none' }}>ACTUALITÉS</a>
         </div>
       </header>
@@ -135,7 +136,7 @@ Dans un monde saturé d'images immédiatement lisibles, Black Hole Superette cho
             </section>
           </div>
           {/* Colonne droite - fond violet sur toute la hauteur */}
-          <div style={{ width: '50%', backgroundImage: "url('/assets/images/Rectangle 23.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', minHeight: 1100, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', gap: '1.1rem', padding: 0, fontFamily: 'Roboto Mono, monospace', margin: 0 }}>
+          <div style={{ width: '50%', backgroundImage: "url('/assets/images/Rectangle 23.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', minHeight: 1100, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', gap: '1.1rem', padding: 0, fontFamily: 'Roboto Mono, monospace', margin: 0, marginTop: '15rem' }}>
             <h3 style={{ color: '#fff', fontSize: '1.35rem', fontWeight: 700, margin: '0 0 0 0', marginBottom: '0.7rem', letterSpacing: 0, lineHeight: 1.1, fontFamily: 'Roboto Mono, monospace' }}>Collage, absurdité & narration éclatée</h3>
             <img src="/assets/images/rob carter - tokyo 1.png" alt="Bloc à côté du bloc blanc" style={{ width: '400px', height: '250px', borderRadius: 0, objectFit: 'cover', margin: '0 auto', display: 'block' }} />
        
@@ -149,11 +150,11 @@ On n'est jamais sûr de ce qu'on regarde, mais quelque chose résonne. Il ne s'a
           </div>
         </div>
       </main>
-      {/* Footer */}
-      <footer style={{ background: "#111", color: "#fff", padding: "2.5rem 0 1.5rem 0", marginTop: "auto", position: "relative", zIndex: 2, fontFamily: 'Roboto Mono', width: '100vw', marginLeft: 0, marginRight: 0 }}>
-        <div style={{ borderTop: "2px solid #888", width: "92%", margin: "-1.2rem auto 2.5rem auto" }}></div>
+      {/* Footer identique à StreamPage */}
+      <footer style={{ background: "#111", color: "#fff", padding: "4.5rem 0 3rem 0", marginTop: "8rem", position: "relative", zIndex: 2, fontFamily: 'Roboto Mono' }}>
+        <div style={{ borderTop: "2px solid #888", width: "92%", margin: "-2.2rem auto 6rem auto" }}></div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", maxWidth: 1100, margin: "0 auto", flexWrap: "wrap", gap: 24 }}>
-          <div style={{ fontSize: "0.95rem", opacity: 0.8, display: "flex", flexDirection: "column", gap: 4, marginLeft: "-2rem" }}>
+          <div style={{ fontSize: "0.95rem", opacity: 0.8, display: "flex", flexDirection: "column", gap: 4, marginLeft: "-10rem" }}>
             <span>Aide et support</span>
             <span>Politique de confidentialité</span>
             <span>Conditions générales</span>
@@ -165,21 +166,21 @@ On n'est jamais sûr de ce qu'on regarde, mais quelque chose résonne. Il ne s'a
           </div>
           <div style={{ display: "flex", gap: 6, alignItems: "center", marginBottom: "1.2rem" }}>
             {/* Icônes réseaux sociaux - cercle blanc, pictogramme noir */}
-            <a href="https://x.com/aesoprockwins?lang=ta" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 36, height: 36 }} title="X" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            <a href="https://x.com/aesoprockwins?lang=ta" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 44, height: 44 }} title="X" target="_blank" rel="noopener noreferrer">
+              <svg width="22" height="22" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </a>
-            <a href="https://www.instagram.com/aesoprockwins/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 36, height: 36 }} title="Instagram">
-              <svg width="18" height="18" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <a href="https://www.instagram.com/aesoprockwins/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 44, height: 44 }} title="Instagram">
+              <svg width="22" height="22" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="https://www.youtube.com/channel/UCzVC0z-KheQEV_2H2zg6V9w" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 36, height: 36 }} title="YouTube" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="https://www.youtube.com/channel/UCzVC0z-KheQEV_2H2zg6V9w" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 44, height: 44 }} title="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="16" cy="16" r="16" fill="#fff"/>
                 <rect x="7" y="9" width="18" height="14" rx="5" fill="#111"/>
                 <polygon points="16,13 22,16 16,19" fill="#fff"/>
               </svg>
             </a>
-            <a href="https://www.facebook.com/AesopRockWins/" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 36, height: 36 }} title="Facebook" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><path d="M18 2h-3a4 4 0 0 0-4 4v3H7v4h4v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3z"/></svg>
+            <a href="https://www.facebook.com/AesopRockWins/" style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff", borderRadius: "50%", width: 44, height: 44 }} title="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="22" height="22" fill="none" stroke="#111" strokeWidth="2" viewBox="0 0 24 24"><path d="M18 2h-3a4 4 0 0 0-4 4v3H7v4h4v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3z"/></svg>
             </a>
           </div>
         </div>
