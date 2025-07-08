@@ -36,7 +36,7 @@ function ActualitésPage() {
       {/* Partie 1 : Titre + bloc texte/image */}
       <div style={{ width: '100vw', padding: '1.5rem 0 0 0', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: 0, paddingLeft: '0', marginBottom: '5rem' }}>
         <h1 style={{ color: '#6B5FCF', fontSize: '4.5rem', fontWeight: 900, margin: 0, letterSpacing: 2, textTransform: 'uppercase', paddingLeft: '5.5rem', fontFamily: 'Roboto Mono, monospace' }}>ACTUALITÉS</h1>
-        <div style={{ display: 'flex', gap: '2.5rem', marginTop: '1.2rem', alignItems: 'flex-start', flexWrap: 'nowrap', paddingLeft: '3.5rem', paddingRight: '3.5rem', width: '100%' }}>
+        <div style={{ display: 'flex', gap: '-200rem', marginTop: '1.2rem', alignItems: 'flex-start', flexWrap: 'nowrap', paddingLeft: '3.5rem', paddingRight: '3.5rem', width: '100%' }}>
           {/* Bloc texte à gauche */}
           <div style={{ flex: 1.2, minWidth: 240, color: '#fff', fontFamily: 'Roboto Mono, monospace', fontSize: '1.35rem', lineHeight: 1.5, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', padding: '0 0 0 2rem', whiteSpace: 'pre-line', letterSpacing: 0.5, textAlign: 'left', borderRadius: 0, marginTop: 0 }}>
             <b style={{ display: 'block', marginBottom: '1.2rem' }}><i>Black Hole Superette</i> : Les rayons d'un autre monde - plonger dans l'univers visuel</b>
