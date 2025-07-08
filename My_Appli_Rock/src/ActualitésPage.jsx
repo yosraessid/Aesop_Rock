@@ -36,7 +36,7 @@ function ActualitésPage() {
       {/* Partie 1 : Titre + bloc texte/image */}
       <div style={{ width: '100vw', padding: '1.5rem 0 0 0', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: 0, paddingLeft: '0', marginBottom: '5rem' }}>
         <h1 style={{ color: '#6B5FCF', fontSize: '4.5rem', fontWeight: 900, margin: 0, letterSpacing: 2, textTransform: 'uppercase', paddingLeft: '5.5rem', fontFamily: 'Roboto Mono, monospace' }}>ACTUALITÉS</h1>
-        <div style={{ display: 'flex', flexDirection: 'row', gap: '2.5rem', marginTop: '1.2rem', alignItems: 'flex-start', flexWrap: 'nowrap', paddingLeft: '3.5rem', paddingRight: '3.5rem', width: '100%' }}>
+        <div style={{ display: 'flex', gap: '2.5rem', marginTop: '1.2rem', alignItems: 'flex-start', flexWrap: 'nowrap', paddingLeft: '3.5rem', paddingRight: '3.5rem', width: '100%' }}>
           {/* Bloc texte à gauche */}
           <div style={{ flex: 1.2, minWidth: 240, color: '#fff', fontFamily: 'Roboto Mono, monospace', fontSize: '1.35rem', lineHeight: 1.5, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', padding: '0 0 0 2rem', whiteSpace: 'pre-line', letterSpacing: 0.5, textAlign: 'left', borderRadius: 0, marginTop: 0 }}>
             <b style={{ display: 'block', marginBottom: '1.2rem' }}><i>Black Hole Superette</i> : Les rayons d'un autre monde - plonger dans l'univers visuel</b>
@@ -142,7 +142,7 @@ Dans un monde saturé d'images immédiatement lisibles, Black Hole Superette cho
           {/* Colonne droite - fond violet sur toute la hauteur */}
           <div style={{ width: '50%', backgroundImage: "url('/assets/images/Rectangle 23.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', minHeight: 600, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', gap: '1.1rem', padding: 0, paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '2rem', paddingBottom: '4rem', fontFamily: 'Roboto Mono, monospace', margin: 0, marginTop: '20rem' }}>
             <h3 style={{ color: '#fff', fontSize: '1.35rem', fontWeight: 700, margin: '0 0 0 0', marginBottom: '0.7rem', letterSpacing: 0, lineHeight: 1.1, fontFamily: 'Roboto Mono, monospace' }}>Collage, absurdité & narration éclatée</h3>
-            <img src="/assets/images/rob carter - tokyo 1.png" alt="Bloc à côté du bloc blanc" style={{ width: '400px', height: '250px', borderRadius: 0, objectFit: 'cover', margin: '0 auto', display: 'block' }} />
+            <img src="/assets/images/Rectangle 34.png" alt="Bloc à côté du bloc blanc" style={{ width: '400px', height: '250px', borderRadius: 0, objectFit: 'cover', margin: '0 auto', display: 'block' }} />
        
             <p style={{ color: '#fff', fontSize: '1.35rem', margin: '0.7rem 0 0 0', lineHeight: 1.45, letterSpacing: 0, whiteSpace: 'pre-line', fontFamily: 'Roboto Mono, monospace' }}>
             Ce monde visuel n'est pas simplement un décor, c'est une narration fragmentée. On passe d'un étalage d'objets non identifiables à un plan technique d'une machine impossible, puis à un personnage qui semble nous fixer sans nous voir. 
