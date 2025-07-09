@@ -101,8 +101,9 @@ function AdminForm() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
               <label style={{ fontWeight: 600, color: '#333', marginBottom: 4 }}>Statut :</label>
               <select name="statut" value={form.statut} onChange={handleChange} required style={{ padding: '0.6rem 1.2rem', borderRadius: '6px', border: '1px solid #444', fontSize: '1rem', background: form.statut === 'available' ? '#b6f0c1' : '#ffbdbd', color: form.statut === 'available' ? '#0b5d1e' : '#a12a2a', fontWeight: 700, transition: 'background 0.2s, color 0.2s' }}>
-                <option value="available">Available</option>
-                <option value="sold out">Sold out</option>
+                <option value="available">
+                Disponible</option>
+                <option value="sold out">Épuisé</option>
               </select>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>

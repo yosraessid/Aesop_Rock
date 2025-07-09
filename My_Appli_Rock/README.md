@@ -1,12 +1,52 @@
-# React + Vite
+# Projet React + Vite – Aesop Rock
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Choix technologiques
 
-Currently, two official plugins are available:
+- **React** : Pour créer une interface moderne, dynamique et réutilisable.
+- **Vite** : Pour démarrer et développer rapidement le projet React.
+- **CSS** : Pour le style et le responsive (adaptation mobile/ordinateur).
+- **Bootstrap** : Pour styliser rapidement l'admin (boutons, formulaires).
+- **Firebase (Firestore)** : Pour stocker les données (dates, actualités) de façon sécurisée et en temps réel.
+- **React Router** : Pour naviguer entre les pages sans recharger le site.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sécurité (admin)
 
-## Expanding the ESLint configuration
+- Champs obligatoires et validation dans les formulaires.
+- Choix contrôlés (ex : statut « Disponible » ou « Épuisé » seulement).
+- Confirmation avant suppression d'une donnée.
+- Accès à l'admin réservé (à renforcer avec authentification si besoin).
+- Règles de sécurité Firebase pour limiter l'accès aux données.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Déploiement (admin)
+
+### Technologies à vérifier
+- **Node.js** (version 16 ou plus récente)
+- **npm** (installé avec Node.js)
+- **Connexion internet** (pour installer les dépendances et accéder à Firebase)
+
+### Actions à effectuer dans le terminal
+1. Ouvrir un terminal dans le dossier du projet.
+2. Installer les dépendances :
+   ```bash
+   npm install
+   ```
+3. Lancer le projet en mode développement :
+   ```bash
+   npm run dev
+   ```
+   > Le site sera accessible à l'adresse indiquée dans le terminal (souvent http://localhost:5173).
+
+### Autres actions nécessaires
+- Vérifier que le fichier `src/firebase.js` contient la bonne configuration Firebase.
+- Accéder à l'admin via `/admin` dans le navigateur.
+- Pour mettre en ligne :
+   ```bash
+   npm run build
+   ```
+   Puis héberger le dossier `dist/` sur Vercel, Netlify, Firebase Hosting, etc.
+
+**Résumé** :
+- Installer Node.js et npm si besoin
+- `npm install` puis `npm run dev`
+- Accès admin via `/admin`
+- Les données sont stockées et sécurisées avec Firebase

@@ -10,7 +10,7 @@ function ActualitésPage() {
     <div style={{
       minHeight: "100vh",
       width: "100vw",
-      backgroundImage: "url('/assets/images/fnd 2 1 (1).png')",
+      backgroundImage: "url('/assets/images/fnd 2 5.png')",
       backgroundSize: "cover",
       backgroundPosition: "center top",
       backgroundRepeat: "no-repeat",
@@ -34,7 +34,16 @@ function ActualitésPage() {
         </div>
       </header>
       {/* Partie 1 : Titre + bloc texte/image */}
-      <div style={{ width: '100vw', padding: '1.5rem 0 0 0', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: 0, paddingLeft: '0', marginBottom: '5rem' }}>
+      <div style={{
+        width: '100vw',
+        padding: '5rem 0 0 0', // Marge interne en haut augmentée pour plus d'espace
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        borderRadius: 0,
+        paddingLeft: '0',
+        marginBottom: '5rem'
+      }}>
         <h1 style={{ color: '#6B5FCF', fontSize: '4.5rem', fontWeight: 900, margin: 0, letterSpacing: 2, textTransform: 'uppercase', paddingLeft: '5.5rem', fontFamily: 'Roboto Mono, monospace' }}>ACTUALITÉS</h1>
         <div style={{ display: 'flex', gap: '-200rem', marginTop: '1.2rem', alignItems: 'flex-start', flexWrap: 'nowrap', paddingLeft: '3.5rem', paddingRight: '3.5rem', width: '100%' }}>
           {/* Bloc texte à gauche */}
@@ -43,11 +52,11 @@ function ActualitésPage() {
             {`
 Et s'il existait un supermarché où rien n'avait de prix ?
 Un espace étrange, sans produits de consommation,
-où les rayons s'étendent dans toutes les directions, 
+où les rayons s'étendent dans toutes les directions,
 vers l'intérieur, vers l'espace, vers des souvenirs que l'on n'a jamais eus.
 
 C'est dans cette faille graphique que semble s'installer Black Hole Superette, un lieu imaginaire à mi-chemin entre le rêve et le désastre esthétique.
- Ici, pas d'offre spéciale ni de soldes de saison. 
+ Ici, pas d'offre spéciale ni de soldes de saison.
 
 Le concept visuel s'impose comme une architecture mentale : chaotique, cryptée, volontairement floue.
 Le regard se pose, mais ne comprend pas. C'est précisément là que réside sa force`}
@@ -55,12 +64,12 @@ Le regard se pose, mais ne comprend pas. C'est précisément là que réside sa 
           {/* Image à droite */}
           <div style={{ flex: 1, minWidth: 320, display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start', marginTop: 0, paddingLeft: '2rem' }}>
             <img
-              src="/assets/images/Plan de travail 1 copie 2 1.png"
+              src="/assets/images/black-hole-superette.png"
               alt="Aesop Rock – Send Help video"
               style={{
                 width: '100%',
-                maxWidth: 600,
-                maxHeight: 500,
+                maxWidth: 550,
+                maxHeight: 450,
                 height: 'auto',
                 border: '4px solid #222',
                 borderRadius: 8,
@@ -69,7 +78,7 @@ Le regard se pose, mais ne comprend pas. C'est précisément là que réside sa 
                 display: 'block',
                 background: '#111',
                 margin: 0,
-                marginTop: '8rem'
+                marginTop: '10rem'
               }}
             />
           </div>
@@ -98,62 +107,162 @@ Le regard se pose, mais ne comprend pas. C'est précisément là que réside sa 
       <main style={{ padding: 0, width: '100vw' }}>
         <div style={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: 'column',
           width: '100vw',
-          alignItems: 'flex-start',
           minHeight: 1100,
           margin: 0,
           marginTop: '8rem',
           marginBottom: '20rem',
-          paddingLeft: '5rem',
-          paddingRight: '5rem',
-          gap: '3rem'
+          paddingLeft: '0',
+          paddingRight: '0'
         }}>
           {/* Colonne gauche - fond noir */}
-          <div style={{ width: '50%', background: 'none', display: 'flex', flexDirection: 'column', gap: '2.2rem', padding: 0, fontFamily: 'Roboto Mono, monospace', margin: 0 }}>
+          <div style={{ width: '100%', background: 'none', display: 'flex', flexDirection: 'column', gap: '2.2rem', padding: 0, fontFamily: 'Roboto Mono, monospace', margin: 0 }}>
             {/* Bloc 2 - Imagerie */}
-            <section style={{ backgroundImage: "url('/assets/images/Rectangle 23.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: 0, padding: 0, paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '2rem', paddingBottom: '4rem', marginBottom: 0, marginLeft: 0, marginRight: 0 }}>
-              <h3 style={{ color: '#fff', fontSize: '1.35rem', fontWeight: 700, margin: 0, marginBottom: '0.7rem', letterSpacing: 0, lineHeight: 1.1, fontFamily: 'Roboto Mono, monospace' }}>Une imagerie qui ne cherche pas à séduire</h3>
-              <img src="/assets/images/Hole 1.png" alt="Imagerie" style={{ width: '400px', height: '250px', borderRadius: 0, objectFit: 'cover', margin: '0 auto', display: 'block' }} />
-              <p style={{ color: '#fff', fontSize: '1.35rem', margin: '0.7rem 0 0 0', lineHeight: 1.45, letterSpacing: 0, whiteSpace: 'pre-line', fontFamily: 'Roboto Mono, monospace' }}>
-              Loin des codes actuels du visuel lisse et accessible, l'univers graphique autour de Black Hole Superette privilégie la densité, 
+            <section style={{
+              backgroundColor: 'rgba(44, 38, 66, 0.8)', // Couleur de fond violette transparente
+              borderRadius: 0,
+              marginBottom: '4rem',
+              marginLeft: 0,
+              marginRight: 'auto', // Aligne le bloc entier à gauche de la page
+              width: '100%', // Permet à maxWidth de prendre effet
+              maxWidth: 750, // Définit la largeur du fond violet du bloc (750px pour les blocs de gauche)
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start', // Aligne le div interne (le contenu) à gauche dans la section
+            }}>
+              {/* NEW: Header with image background and title */}
+              <div style={{
+                height: '350px', // Fixed height for the image area as shown in captures
+                width: '100%', // Take full width of the section
+                backgroundImage: "url('/assets/images/Hole 1.png')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start', // Align content to the top
+                alignItems: 'flex-start', // Align content to the left
+                padding: '0 5.5rem 0 5.5rem', // Ajuste la marge interne pour le positionnement du titre
+              }}>
+                <h3 style={{ color: '#fff', fontSize: '2.5rem', fontWeight: 700, margin: '-2rem 0 0 0', letterSpacing: '1px', lineHeight: 1.1, fontFamily: 'Roboto Mono, monospace', textAlign: 'left' }}>Une imagerie qui ne cherche pas à séduire</h3>
+              </div>
+              {/* OLD: Content div, now only with paragraph */}
+              <div style={{
+                padding: '2rem 2rem 2rem 5.5rem', // Keep existing padding for the paragraph text
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                width: '100%',
+              }}>
+                <p style={{ color: '#fff', fontSize: '1.15rem', margin: '1.2rem 0 0 0', lineHeight: 1.6, letterSpacing: 0, whiteSpace: 'pre-line', fontFamily: 'Roboto Mono, monospace', textAlign: 'left' }}>
+                  Loin des codes actuels du visuel lisse et accessible, l'univers graphique autour de Black Hole Superette privilégie la densité,
 la saturation, l'anomalie. L'esthétique n'est pas décorative, elle est active.
- 
+
 Elle participe à un brouillage volontaire des repères. Comme si chaque image était un bug dans le langage visuel du hip-hop contemporain.
-On y retrouve des références éclatées : science-fiction rétro, manuels techniques obsolètes, typographies déformées, objets du quotidien déplacés dans un autre contexte. 
+On y retrouve des références éclatées : science-fiction rétro, manuels techniques obsolètes, typographies déformées, objets du quotidien déplacés dans un autre contexte.
 
 Le tout évoque un espace en ruine qui refuse la logique, mais impose un style.
 Tout semble trop plein, trop de détails, trop d'éléments, trop de couches. Et pourtant, chaque élément semble juste.
-              </p>
+                </p>
+              </div>
             </section>
-            {/* Bloc 4 - Expérience sensorielle */}
-            <section style={{ backgroundImage: "url('/assets/images/Rectangle 23.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: 0, padding: 0, paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '4rem', paddingBottom: '2rem', marginBottom: 0, marginLeft: 0, marginRight: 0 }}>
-              <h3 style={{ color: '#fff', fontSize: '1.25rem', fontWeight: 700, margin: '2.5rem 0 0 0', marginBottom: '0.7rem', letterSpacing: 0, lineHeight: 1.1, fontFamily: 'Roboto Mono, monospace' }}>Une expérience sensorielle plus que visuelle</h3>
-              <img src="/assets/images/rob carter - tokyo 1.png" alt="Expérience sensorielle" style={{ width: '400px', height: '250px', borderRadius: 0, objectFit: 'cover', margin: '0 auto', display: 'block' }} />
-              <p style={{ color: '#fff', fontSize: '1.35rem', margin: '0.7rem 0 0 0', lineHeight: 1.45, letterSpacing: 0, whiteSpace: 'pre-line', fontFamily: 'Roboto Mono, monospace' }}>
-              Ce que construit Black Hole Superette, c'est moins une identité visuelle qu'une expérience sensorielle complète. Il faut s'y immerger, s'y perdre, accepter de ne pas comprendre. L'image devient une atmosphère. 
-
-Elle ne parle pas, elle enveloppe.
-Il n'y a pas de centre, pas de hiérarchie. Aucun élément ne domine les autres. Le regard glisse, revient, se perd. C'est une invitation à ralentir, à observer autrement. Ce qui est proposé ici n'est pas une communication visuelle, mais une sensation visuelle. Une dérive.
-
-Dans un monde saturé d'images immédiatement lisibles, Black Hole Superette choisit la résistance : celle de l'ambiguïté, du détail, de l'illisible beau. Et dans cette zone trouble entre poésie visuelle et absurdité graphique, quelque chose de rare émerge : un langage propre. Un univers qui ne cherche pas à être compris, mais vécu. </p>
-            </section>
-          </div>
-          {/* Colonne droite - fond violet sur toute la hauteur */}
-          <div style={{ width: '50%', backgroundImage: "url('/assets/images/Rectangle 23.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', minHeight: 600, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', gap: '1.1rem', padding: 0, paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '2rem', paddingBottom: '4rem', fontFamily: 'Roboto Mono, monospace', margin: 0, marginTop: '20rem' }}>
-            <h3 style={{ color: '#fff', fontSize: '1.35rem', fontWeight: 700, margin: '0 0 0 0', marginBottom: '0.7rem', letterSpacing: 0, lineHeight: 1.1, fontFamily: 'Roboto Mono, monospace' }}>Collage, absurdité & narration éclatée</h3>
-            <img src="/assets/images/Rectangle 34.png" alt="Bloc à côté du bloc blanc" style={{ width: '400px', height: '250px', borderRadius: 0, objectFit: 'cover', margin: '0 auto', display: 'block' }} />
-       
-            <p style={{ color: '#fff', fontSize: '1.35rem', margin: '0.7rem 0 0 0', lineHeight: 1.45, letterSpacing: 0, whiteSpace: 'pre-line', fontFamily: 'Roboto Mono, monospace' }}>
-            Ce monde visuel n'est pas simplement un décor, c'est une narration fragmentée. On passe d'un étalage d'objets non identifiables à un plan technique d'une machine impossible, puis à un personnage qui semble nous fixer sans nous voir. 
+            {/* Bloc 3 - Collage, absurdité & narration éclatée */}
+            <section style={{
+              backgroundColor: 'rgba(44, 38, 66, 0.8)', // Couleur de fond violette transparente
+              borderRadius: 0,
+              marginBottom: '4rem',
+              marginLeft: 'auto', // Pousse le bloc entier vers la droite de la page
+              marginRight: 0, // Colle le bloc entier au bord droit de la page
+              width: '100%', // Permet à maxWidth de prendre effet (la section prendra 750px de large)
+              maxWidth: 750, // Définit la largeur du fond violet du bloc (750px pour les blocs de droite)
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start', // Aligne le div interne (le contenu) à gauche dans la section
+              // Retiré le paddingRight de la section, les paddings du div interne sont suffisants
+            }}>
+              {/* NEW: Header with image background and title */}
+              <div style={{
+                height: '350px', // Fixed height for the image area as shown in captures
+                width: '100%', // Take full width of the section
+                backgroundImage: "url('/assets/images/_ (4) copie 2.png')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start', // Align content to the top
+                alignItems: 'flex-start', // Align content to the left
+                padding: '0 5.5rem 0 5.5rem', // Ajuste la marge interne pour le positionnement du titre
+              }}>
+                <h3 style={{ color: '#fff', fontSize: '2rem', fontWeight: 700, margin: '-2rem 0 0 0', letterSpacing: '1px', lineHeight: 1.1, fontFamily: 'Roboto Mono, monospace', textAlign: 'left' }}>Collage, absurdité & narration éclatée</h3>
+              </div>
+              {/* OLD: Content div, now only with paragraph */}
+              <div style={{
+                padding: '2rem 2rem 2rem 5.5rem', // Marge interne ajustée pour l'alignement à gauche
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                width: '100%',
+                // Pas de maxWidth ici, c'est le parent (section) qui le gère.
+              }}>
+                <p style={{ color: '#fff', fontSize: '1.15rem', margin: '1.2rem 0 0 0', lineHeight: 1.6, letterSpacing: 0, whiteSpace: 'pre-line', fontFamily: 'Roboto Mono, monospace', textAlign: 'left' }}>
+                  Ce monde visuel n'est pas simplement un décor, c'est une narration fragmentée. On passe d'un étalage d'objets non identifiables à un plan technique d'une machine impossible, puis à un personnage qui semble nous fixer sans nous voir.
 
 Chaque image fonctionne comme une énigme isolée, mais toutes appartiennent à la même langue.
 Le collage, largement utilisé, permet cette superposition des niveaux de lecture : l'ancien et le futuriste, le technique et l'émotionnel, le réel et le complètement fictif.
 
 On n'est jamais sûr de ce qu'on regarde, mais quelque chose résonne.
 Il ne s'agit pas d'esthétique gratuite, mais d'un geste artistique : refuser l'évidence, accueillir l'ambigu. L'image n'illustre pas un message, elle le trouble.
-            </p>
+                </p>
+              </div>
+            </section>
+            {/* Bloc 4 - Expérience sensorielle */}
+            <section style={{
+              backgroundColor: 'rgba(44, 38, 66, 0.8)', // Couleur de fond violette transparente
+              borderRadius: 0,
+              marginBottom: '4rem',
+              marginLeft: 0,
+              marginRight: 'auto', // Aligne le bloc entier à gauche de la page
+              width: '100%', // Permet à maxWidth de prendre effet
+              maxWidth: 750, // Définit la largeur du fond violet du bloc (750px pour les blocs de gauche)
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start', // Aligne le div interne (le contenu) à gauche dans la section
+            }}>
+              {/* NEW: Header with image background and title */}
+              <div style={{
+                height: '350px', // Fixed height for the image area as shown in captures
+                width: '100%', // Take full width of the section
+                backgroundImage: "url('/assets/images/rob carter - tokyo 1.png')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start', // Align content to the top
+                alignItems: 'flex-start', // Align content to the left
+                padding: '4rem 5.5rem 0 5.5rem', // Adjust padding for title position from image edges
+              }}>
+                <h3 style={{ color: '#fff', fontSize: '2rem', fontWeight: 700, margin: '-6rem 0 0 0', letterSpacing: '1px', lineHeight: 1.1, fontFamily: 'Roboto Mono, monospace', textAlign: 'left' }}>Une expérience sensorielle plus que visuelle</h3>
+              </div>
+              {/* OLD: Content div, now only with paragraph */}
+              <div style={{
+                padding: '2rem 2rem 2rem 5.5rem', // Keep existing padding for the paragraph text
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                width: '100%',
+              }}>
+                <p style={{ color: '#fff', fontSize: '1.15rem', margin: '1.2rem 0 0 0', lineHeight: 1.6, letterSpacing: 0, whiteSpace: 'pre-line', fontFamily: 'Roboto Mono, monospace', textAlign: 'left' }}>
+                  Ce que construit Black Hole Superette, c'est moins une identité visuelle qu'une expérience sensorielle complète. Il faut s'y immerger, s'y perdre, accepter de ne pas comprendre. L'image devient une atmosphère.
+
+Elle ne parle pas, elle enveloppe.
+Il n'y a pas de centre, pas de hiérarchie. Aucun élément ne domine les autres. Le regard glisse, revient, se perd. C'est une invitation à ralentir, à observer autrement. Ce qui est proposé ici n'est pas une communication visuelle, mais une sensation visuelle. Une dérive.
+
+Dans un monde saturé d'images immédiatement lisibles, Black Hole Superette choisit la résistance : celle de l'ambiguïté, du détail, de l'illisible beau. Et dans cette zone trouble entre poésie visuelle et absurdité graphique, quelque chose de rare émerge : un langage propre. Un univers qui ne cherche pas à être compris, mais vécu.
+                </p>
+              </div>
+            </section>
           </div>
+
         </div>
       </main>
       {/* Footer identique à StreamPage */}
