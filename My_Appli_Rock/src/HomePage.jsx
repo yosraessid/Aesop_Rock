@@ -1,8 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "./firebase";
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const mois = [
+    'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
+    'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
+  ];
+  const [annee, moisNum, jour] = dateStr.split('-');
+  return `${jour} ${mois[parseInt(moisNum, 10) - 1]} ${annee}`;
+}
 
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  // Ajout : état pour stocker les dates de tournée
+  const [tourDates, setTourDates] = useState([]);
+
+  // Ajout : récupération en temps réel des dates de tournée
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, "tourneeDates"), (snapshot) => {
+      const datesArray = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setTourDates(datesArray);
+    });
+    return () => unsubscribe();
+  }, []);
+
   return (
     <div className="home-global" style={{
       backgroundImage: "url('/assets/images/fnd 2.png')",
@@ -91,6 +115,45 @@ function HomePage() {
           </div>
         </section>
 
+        {/* Image vinyle à cheval sur le bandeau et la section tournée */}
+        <div style={{
+          width: '100vw',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: '-80px',
+          position: 'relative',
+          zIndex: 3
+        }}>
+          {/* Overlay noir transparent identique à la section tournée */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'rgba(0,0,0,0.5)',
+            zIndex: 1,
+            
+          }} />
+          <img
+            src="/assets/images/Free_Vinyl_Mockup_5 1.png"
+            alt="Vinyl Mockup"
+            style={{
+              maxWidth: '900px',
+              marginTop:'-150px',
+              width: '90vw',
+              height: 'auto',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
+              borderRadius: '0.7rem',
+              background: 'none',
+              position: 'relative',
+              zIndex: 2
+            }}
+          />
+        </div>
+
+        {/* Section tournée dynamique */}
         <section className="tour-section" style={{ position: 'relative', zIndex: 1 }}>
           {/* Overlay foncé sur la section tournée */}
           <div style={{
@@ -104,55 +167,92 @@ function HomePage() {
             pointerEvents: 'none',
           }} />
           <div style={{ position: 'relative', zIndex: 1 }}>
-            <h2 className="tour-title">TOURNÉE</h2>
-
-            <div className="tour-city">
-              <h3>Las Vegas, Nevada</h3>
-              <p>T-Mobile Arena</p>
-              <ul>
-                <li>16 Juillet 2025 <span>&gt;</span> 
-                  <a href="https://www.ticketmaster.com/search?q=aesop+rock" target="_blank" rel="noopener noreferrer">BILLETS</a>
-                </li>
-                <li>18 Juillet 2025 <span>&gt;</span> 
-                  <a href="https://www.ticketmaster.com/search?q=aesop+rock" target="_blank" rel="noopener noreferrer">BILLETS</a>
-                </li>
-                <li>19 Juillet 2025 <span>&gt;</span> 
-                  <a href="https://www.ticketmaster.com/search?q=aesop+rock" target="_blank" rel="noopener noreferrer">BILLETS</a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="tour-city">
-              <h3>Paris, France</h3>
-              <p>Accor Arena</p>
-              <ul>
-                <li>09 Juillet 2025 <span>&gt;</span> 
-                  <a href="https://www.ticketmaster.com/search?q=aesop+rock" target="_blank" rel="noopener noreferrer">BILLETS</a>
-                </li>
-                <li>10 Juillet 2025 <span>&gt;</span> 
-                  <a href="https://www.ticketmaster.com/search?q=aesop+rock" target="_blank" rel="noopener noreferrer">BILLETS</a>
-                </li>
-                <li>12 Juillet 2025 <span>&gt;</span> 
-                  <a href="https://www.ticketmaster.com/search?q=aesop+rock" target="_blank" rel="noopener noreferrer">BILLETS</a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="tour-city">
-              <h3>Los Angeles, Californie</h3>
-              <p>Walt Disney Concert Hall</p>
-              <ul>
-                <li>09 Juillet 2025 <span>&gt;</span> 
-                  <a href="https://www.ticketmaster.com/search?q=aesop+rock" target="_blank" rel="noopener noreferrer">BILLETS</a>
-                </li>
-                <li>10 Juillet 2025 <span>&gt;</span> 
-                  <a href="https://www.ticketmaster.com/search?q=aesop+rock" target="_blank" rel="noopener noreferrer">BILLETS</a>
-                </li>
-                <li>12 Juillet 2025 <span>&gt;</span> 
-                  <a href="https://www.ticketmaster.com/search?q=aesop+rock" target="_blank" rel="noopener noreferrer">BILLETS</a>
-                </li>
-              </ul>
-            </div>
+            <h2 className="tour-title" style={{ color: '#b1cc1f', fontSize: '4rem', fontWeight: 900, letterSpacing: 2, textTransform: 'uppercase', fontFamily: 'Roboto Mono, monospace', marginBottom: '2.5rem' }}>TOURNÉE</h2>
+            {tourDates.length === 0 ? (
+              <p style={{ color: '#fff' }}>Aucune date de tournée pour le moment.</p>
+            ) : (
+              Object.entries(
+                tourDates.reduce((acc, d) => {
+                  const key = `${d.ville}|||${d.pays}|||${d.lieu}`;
+                  acc[key] = acc[key] || [];
+                  acc[key].push(d);
+                  return acc;
+                }, {})
+              ).map(([key, dates]) => {
+                const [ville, pays, lieu] = key.split('|||');
+                return (
+                  <div className="tour-city" key={key} style={{ marginBottom: '3.5rem' }}>
+                    <h3 style={{ fontSize: '2.7rem', color: '#fff', fontFamily: 'monospace', fontWeight: 700, margin: 0, lineHeight: 1.1 }}>
+                      {ville},<br />{pays}
+                    </h3>
+                    <div style={{ color: '#ccc', fontFamily: 'monospace', fontSize: '1.25rem', marginBottom: '1.5rem', marginTop: '0.5rem', marginLeft: '0.2rem' }}>
+                      {lieu}
+                    </div>
+                    {dates[0]?.nomTournée && (
+                      <div style={{
+                        color: '#b1cc1f',
+                        fontFamily: 'monospace',
+                        fontWeight: 'bold',
+                        fontSize: '2rem',
+                        marginBottom: '1.5rem'
+                      }}>
+                        {dates[0].nomTournée}
+                      </div>
+                    )}
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                      {dates.map((d, i) => (
+                        <li key={d.id || i} style={{ marginBottom: '1.5rem' }}>
+                          <div style={{ display: 'flex', alignItems: 'flex-start', fontFamily: 'monospace', fontSize: '1.5rem', letterSpacing: '2px' }}>
+                            <div style={{ minWidth: 220 }}>
+                              <div style={{ color: '#fff' }}>
+                                {formatDate(d.date)}
+                                {d.statut && (
+                                  <span
+                                    className={
+                                      d.statut && d.statut.trim().toLowerCase() === 'available' ? 'statut-disponible' :
+                                      d.statut && d.statut.trim().toLowerCase() === 'sold out' ? 'statut-epuise' :
+                                      ''
+                                    }
+                                    style={{ fontSize: '1.1rem', marginLeft: '1rem', textTransform: 'capitalize' }}
+                                  >
+                                    {d.statut && d.statut.trim().toLowerCase() === 'available' ? 'Disponible' :
+                                     d.statut && d.statut.trim().toLowerCase() === 'sold out' ? 'Épuisé' :
+                                     d.statut}
+                                  </span>
+                                )}
+                              </div>
+                              <div style={{ color: '#b1cc1f', fontSize: '1.1rem', fontFamily: 'monospace', letterSpacing: '2px', marginTop: '-0.2rem', textAlign: 'left' }}>
+                                {d.heure}
+                              </div>
+                            </div>
+                            <span style={{ color: '#b1cc1f', fontWeight: 'bold', margin: '0 1.2rem 0 0.5rem', marginTop: '0.3rem' }}>&gt;</span>
+                            <a
+                              href="https://www.ticketmaster.com/search?q=aesop+rock"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                color: '#b1cc1f',
+                                fontWeight: 'bold',
+                                textDecoration: 'none',
+                                letterSpacing: '2px',
+                                fontSize: '1.5rem',
+                                marginRight: 0,
+                                marginLeft: 0,
+                                minWidth: 110,
+                                textAlign: 'left',
+                                marginTop: '0.3rem'
+                              }}
+                            >
+                              BILLETS
+                            </a>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })
+            )}
           </div>
         </section>
 
